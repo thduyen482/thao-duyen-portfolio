@@ -9,16 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .showcase-grid { grid-template-columns: repeat(4, 1fr); }
-      .mochi-card { background: #efcfd3; color: #613343; }
-      .mochi-shape { position: absolute; border-radius: 48% 52% 44% 56%; width: 35%; aspect-ratio: 1; box-shadow: inset -11px -10px 0 rgba(119, 56, 73, .12); }
-      .mochi-shape.one { background: #fff4e2; top: 18%; left: 13%; transform: rotate(-15deg); }
-      .mochi-shape.two { background: #d76d88; top: 27%; right: 9%; transform: rotate(20deg); }
-      .mochi-shape.three { background: #b0cf8e; top: 47%; left: 31%; transform: rotate(5deg); }
-      @media (max-width: 1000px) and (min-width: 701px) { .showcase-grid { grid-template-columns: 1fr 1fr; } .project-card { height: 390px; } }
-      @media (max-width: 700px) { .showcase-grid { display: block; } }
-    </style>
+    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="chat.css" />
   </head>
   <body>
     <div class="noise"></div>
@@ -27,7 +19,7 @@
       <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false"><i></i><i></i></button>
       <nav class="nav-links">
         <a href="#dich-vu">Dịch vụ</a>
-        <a href="#dau-an">Dấu ấn</a>
+        <a href="#dau-an">Trải nghiệm</a>
         <a href="#cau-chuyen">Câu chuyện</a>
         <a class="nav-contact" href="#lien-he">Kết nối <span>↗</span></a>
       </nav>
@@ -48,6 +40,12 @@
           <div class="sun"></div><div class="arch arch-one"></div><div class="arch arch-two"></div>
           <span class="art-text one">TASTE</span><span class="art-text two">THE</span><span class="art-text three">STORY</span>
           <div class="scribble">✳</div>
+          <div class="hangers">
+            <a class="hang" href="#thiep-cuoi" tabindex="-1" style="--x:14%;--len:78px"><i class="cord"></i><span class="orn orn-tag">Thiệp<b>♥</b></span><small>Viết thiệp cưới</small></a>
+            <a class="hang" href="#non-ky-dieu" tabindex="-1" style="--x:37%;--len:148px"><i class="cord"></i><span class="orn orn-mochi"></span><small>Quay vị mochi</small></a>
+            <a class="hang" href="#hun-khoi" tabindex="-1" style="--x:62%;--len:46px"><i class="cord"></i><span class="orn orn-sausage"><i></i><i></i></span><small>Hun lạp xưởng</small></a>
+            <a class="hang" href="#ai-agent" tabindex="-1" style="--x:86%;--len:112px"><i class="cord"></i><span class="orn orn-ai">AI</span><small>Giao việc cho AI</small></a>
+          </div>
         </div>
       </section>
 
@@ -65,21 +63,124 @@
           <p class="eyebrow">Những gì tôi làm</p>
         </div>
         <div class="service-list">
-          <article class="service-item"><span>01</span><h2>AI Visual<br />&amp; Canva</h2><p>Biến concept thành hình ảnh có gu, nhanh và đúng nhận diện — từ social post tới bộ campaign hoàn chỉnh.</p><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>02</span><h2>Thiệp cưới<br /><i>online</i></h2><p>Những lời mời kỹ thuật số mang cảm xúc cá nhân, chỉn chu từ nhịp chữ đến từng tương tác nhỏ.</p><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>03</span><h2>Content Branding<br />&amp; SEO</h2><p>Xây tiếng nói thương hiệu và nội dung tìm thấy đúng người, đúng thời điểm.</p><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>04</span><h2>Giải pháp<br />AI Agent</h2><p>Tự động hóa những việc lặp lại để đội ngũ có thêm thời gian cho điều quan trọng.</p><span class="service-arrow">↗</span></article>
+          <article class="service-item" data-book="ai-visual" tabindex="0" role="button"><span>01</span><h2>AI Visual<br />&amp; Canva</h2><p>Biến concept thành hình ảnh có gu, nhanh và đúng nhận diện — từ social post tới bộ campaign hoàn chỉnh.<b class="service-price"></b></p><span class="service-arrow"><em>Đặt lịch</em>↗</span></article>
+          <article class="service-item" data-book="thiep-cuoi" tabindex="0" role="button"><span>02</span><h2>Thiệp cưới<br /><i>online</i></h2><p>Những lời mời kỹ thuật số mang cảm xúc cá nhân, chỉn chu từ nhịp chữ đến từng tương tác nhỏ.<b class="service-price"></b></p><span class="service-arrow"><em>Đặt lịch</em>↗</span></article>
+          <article class="service-item" data-book="content-seo" tabindex="0" role="button"><span>03</span><h2>Content Branding<br />&amp; SEO</h2><p>Xây tiếng nói thương hiệu và nội dung tìm thấy đúng người, đúng thời điểm.<b class="service-price"></b></p><span class="service-arrow"><em>Đặt lịch</em>↗</span></article>
+          <article class="service-item" data-book="ai-agent" tabindex="0" role="button"><span>04</span><h2>Giải pháp<br />AI Agent</h2><p>Tự động hóa những việc lặp lại để đội ngũ có thêm thời gian cho điều quan trọng.<b class="service-price"></b></p><span class="service-arrow"><em>Đặt lịch</em>↗</span></article>
+          <article class="service-item" data-book="test-2k" tabindex="0" role="button" hidden><span>T</span><h2>Thử thanh toán<br /><i>2.000đ</i></h2><p>Dịch vụ ẩn để kiểm tra luồng QR → Telegram → mail xác nhận.<b class="service-price"></b></p><span class="service-arrow"><em>Đặt lịch</em>↗</span></article>
         </div>
       </section>
 
       <section id="dau-an" class="showcase">
-        <div class="showcase-top section-shell"><p class="section-number">( 03 )</p><p class="eyebrow">Thương hiệu là thứ người ta cảm được trước khi kịp đọc</p></div>
+        <div class="showcase-top section-shell"><p class="section-number">( 03 )</p><p class="eyebrow">Đừng chỉ xem — chạm vào thử đi</p></div>
         <div class="marquee" aria-hidden="true"><div>MAKE IT MEMORABLE <span>✳</span> MAKE IT HUMAN <span>✳</span> MAKE IT MEMORABLE <span>✳</span></div></div>
-        <div class="showcase-grid section-shell">
-          <article class="project-card wedding-card"><div class="card-mark">♥</div><p>01 / DIGITAL INVITATION</p><h3>Ngày mình<br /><i>về chung đôi</i></h3><span>Thiệp cưới online</span></article>
-          <article class="project-card food-card"><div class="food-label"><small>Đặc sản</small><strong>BẮC KẠN</strong><small>gửi từ rừng núi</small></div><p>02 / LOCAL FOOD</p><h3>Vị núi,<br /><i>về phố</i></h3><span>Lạp xưởng · Miến dong</span></article>
-          <article class="project-card mochi-card"><div class="mochi-shape one"></div><div class="mochi-shape two"></div><div class="mochi-shape three"></div><p>03 / FRESH MOCHI</p><h3>Mochi tươi<br /><i>12 vị</i></h3><span>Một sản phẩm riêng đầy màu sắc</span></article>
-          <article class="project-card ai-card"><div class="ai-orbit"><b>AI</b></div><p>04 / SMART WORKFLOW</p><h3>Ý tưởng<br /><i>đi xa hơn</i></h3><span>AI Agent &amp; automation</span></article>
+        <nav class="play-nav section-shell" role="tablist" aria-label="Chọn trải nghiệm">
+          <a href="#thiep-cuoi" role="tab" aria-controls="thiep-cuoi" style="--c:#e9bfd3"><span>01</span>Viết thiệp cưới</a>
+          <a href="#non-ky-dieu" role="tab" aria-controls="non-ky-dieu" style="--c:#efcfd3"><span>02</span>Quay vị mochi</a>
+          <a href="#hun-khoi" role="tab" aria-controls="hun-khoi" style="--c:#df9c48"><span>03</span>Hun lạp xưởng</a>
+          <a href="#ai-agent" role="tab" aria-controls="ai-agent" style="--c:#9ac5b7"><span>04</span>Giao việc cho AI</a>
+        </nav>
+        <div class="play-list section-shell reveal">
+
+        <div class="shop-panel play-panel wedding-panel" role="tabpanel" id="thiep-cuoi">
+          <div class="invite-stage" id="inviteStage" data-theme="hong">
+            <button class="envelope" id="envelope" type="button" aria-label="Mở / đóng thiệp">
+              <span class="env-back"></span>
+              <span class="invite-card">
+                <small>Trân trọng kính mời</small>
+                <b class="names"><span id="pvBride">Thu Hà</span><i>&amp;</i><span id="pvGroom">Minh Quân</span></b>
+                <span class="pv-date" id="pvDate"></span>
+                <span class="pv-heart">♥</span>
+              </span>
+              <span class="env-front"></span>
+              <span class="env-flap"></span>
+              <span class="seal">♥</span>
+            </button>
+            <p class="hint" id="envHint">Chạm vào phong bì để mở thiệp</p>
+          </div>
+          <div class="panel-copy">
+            <p class="eyebrow">01 / Digital invitation</p>
+            <h2>Ngày mình<br /><i>về chung đôi</i></h2>
+            <p class="panel-lead">Gõ tên hai bạn và ngày cưới — tấm thiệp bên cạnh đổi theo ngay. Chọn tông màu bạn thích rồi mở phong bì xem thử.</p>
+            <div class="inline-fields">
+              <label>Cô dâu<input id="brideName" value="Thu Hà" maxlength="18" /></label>
+              <label>Chú rể<input id="groomName" value="Minh Quân" maxlength="18" /></label>
+              <label>Ngày cưới<input id="weddingDate" type="date" /></label>
+            </div>
+            <div class="theme-pick" role="group" aria-label="Tông màu thiệp">
+              <button type="button" class="active" data-theme="hong" style="--sw:#c14b69">Hồng đào</button>
+              <button type="button" data-theme="xanh" style="--sw:#3f6b57">Xanh lá non</button>
+              <button type="button" data-theme="kem" style="--sw:#8a5a2b">Kem cổ điển</button>
+            </div>
+            <div class="row-actions"><button class="btn dark" id="weddingBook" type="button">Đặt làm thiệp này <span>→</span></button><span class="price-tag" id="weddingPrice"></span></div>
+          </div>
+        </div>
+
+        <div class="shop-panel play-panel mochi-panel" role="tabpanel" id="non-ky-dieu">
+          <div class="panel-copy">
+            <p class="eyebrow">02 / Fresh mochi · 12 vị</p>
+            <h2>Chiếc nón<br /><i>kỳ diệu</i></h2>
+            <p class="panel-lead">Quay để nón chọn vị giúp bạn, hoặc chạm thẳng vào miếng mình thích. Chọn hộp <b>6, 8, 10 hoặc 12 viên</b> rồi lấp đầy theo ý mình.</p>
+            <div class="mode-switch" role="group" aria-label="Cách chọn vị"><button type="button" class="active" data-mode="spin">Quay ngẫu nhiên</button><button type="button" data-mode="pick">Tự chọn vị</button></div>
+            <p class="wheel-result" id="wheelResult" aria-live="polite">Nón đang chờ bạn quay…</p>
+            <div class="row-actions"><button class="btn primary" id="spinBtn" type="button">Quay nón <span>↻</span></button><button class="btn ghost" id="addFlavor" type="button" disabled>Cho vào hộp +</button></div>
+            <div class="mochi-box">
+              <div class="size-pick" id="boxSizes" role="group" aria-label="Cỡ hộp"></div>
+              <div class="box-slots" id="boxSlots"></div>
+              <div class="box-meta"><span id="boxCount">0 / 6 viên</span><b id="boxPrice">0đ</b></div>
+              <div class="row-actions"><button class="btn dark" id="addBox" type="button" disabled>Thêm hộp vào giỏ</button><button class="text-btn" id="clearBox" type="button">Làm lại</button></div>
+            </div>
+          </div>
+          <div class="wheel-stage">
+            <div class="wheel-pointer" aria-hidden="true"></div>
+            <svg id="mochiWheel" viewBox="-200 -200 400 400" role="img" aria-label="Vòng quay 12 vị mochi"></svg>
+            <button class="wheel-hub" id="hubBtn" type="button">QUAY</button>
+          </div>
+        </div>
+
+        <div class="shop-panel play-panel smoke-panel" role="tabpanel" id="hun-khoi">
+          <div class="smokehouse" id="smokehouse" aria-hidden="true">
+            <div class="beam"></div>
+            <div class="links">
+              <div class="link"><i></i><span class="sausage"></span><span class="sausage"></span></div>
+              <div class="link"><i></i><span class="sausage"></span><span class="sausage"></span></div>
+              <div class="link"><i></i><span class="sausage"></span><span class="sausage"></span></div>
+              <div class="link"><i></i><span class="sausage"></span><span class="sausage"></span></div>
+            </div>
+            <div class="smoke-layer" id="smokeLayer"></div>
+            <div class="hearth"><div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div><div class="logs"></div></div>
+          </div>
+          <div class="panel-copy">
+            <p class="eyebrow">03 / Đặc sản Bắc Kạn · gác bếp</p>
+            <h2>Tự tay<br /><i>hun khói</i></h2>
+            <p class="panel-lead">Nhấn và giữ để nhóm lửa. Khói càng lâu, lạp xưởng càng chuyển màu đỏ nâu — đúng như trên gác bếp nhà người Tày.</p>
+            <div class="smoke-meter"><span>Độ khói</span><div class="bar"><i id="smokeBar"></i></div><b id="smokePct">0%</b></div>
+            <button class="btn primary hold-btn" id="smokeBtn" type="button">Giữ để hun khói <span>🔥</span></button>
+            <p class="smoke-status" id="smokeStatus" aria-live="polite">Lạp xưởng còn tươi, chưa ám chút khói nào.</p>
+            <div class="product-list" id="productList"></div>
+          </div>
+        </div>
+
+        <div class="shop-panel play-panel ai-panel" role="tabpanel" id="ai-agent">
+          <div class="panel-copy">
+            <p class="eyebrow">04 / Smart workflow</p>
+            <h2>Giao việc<br /><i>cho agent</i></h2>
+            <p class="panel-lead">Chọn một việc lặp lại bạn đang làm tay, cho biết nó ngốn bao nhiêu giờ mỗi tuần — rồi xem agent làm thay thế nào.</p>
+            <div class="task-pick" role="group" aria-label="Việc muốn giao">
+              <button type="button" class="active" data-task="tin-nhan">Trả lời tin nhắn khách</button>
+              <button type="button" data-task="dang-bai">Lên lịch đăng bài</button>
+              <button type="button" data-task="don-hang">Tổng hợp đơn hàng</button>
+            </div>
+            <label class="hours">Mỗi tuần bạn mất <b id="hoursVal">6 giờ</b> cho việc này<input type="range" id="hoursRange" min="1" max="20" value="6" /></label>
+            <div class="row-actions"><button class="btn dark" id="runAgent" type="button">Chạy agent <span>▶</span></button><button class="btn ghost" id="agentBook" type="button">Đặt lịch tư vấn <span>→</span></button></div>
+          </div>
+          <div class="agent-console">
+            <div class="console-head"><i></i><i></i><i></i><span>agent · thảo duyên</span></div>
+            <ol class="agent-steps" id="agentSteps"></ol>
+            <div class="agent-saved"><span>Thời gian bạn lấy lại mỗi tháng</span><b id="savedHours">— giờ</b></div>
+          </div>
+        </div>
+
         </div>
       </section>
 
@@ -97,6 +198,19 @@
       </section>
     </main>
     <footer><a class="brand" href="#top">thảo duyên<span>·</span></a><p>© 2026 · Được làm từ Hà Nội, với nhiều yêu thương.</p><a href="#top">Lên đầu trang ↑</a></footer>
+    <button class="cart-fab" id="cartFab" type="button" aria-label="Mở giỏ hàng"><span>Giỏ</span><b id="cartCount">0</b></button>
+    <div class="scrim" id="scrim" hidden></div>
+    <aside class="drawer" id="cartDrawer" aria-label="Giỏ hàng" aria-hidden="true">
+      <div class="drawer-head"><h3>Giỏ của bạn</h3><button class="icon-btn" type="button" data-close aria-label="Đóng">×</button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="drawer-foot"><div class="total-line"><span>Tạm tính</span><b id="cartTotal">0đ</b></div><button class="btn primary wide" id="checkoutBtn" type="button">Đặt hàng &amp; thanh toán <span>→</span></button></div>
+    </aside>
+    <div class="modal" id="orderModal" role="dialog" aria-modal="true" hidden><div class="modal-card"><button class="icon-btn modal-close" type="button" data-close aria-label="Đóng">×</button><div id="modalBody"></div></div></div>
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="shop-config.js"></script>
     <script src="script.js"></script>
+    <script src="shop.js"></script>
+    <script src="chat.js"></script>
   </body>
 </html>
